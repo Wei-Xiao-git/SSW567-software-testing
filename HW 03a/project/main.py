@@ -1,18 +1,19 @@
 import requests
+print(">>> LOADED project.main <<<")
 
 def get_repo_commits(user_id):
     """
     Given a GitHub user ID, prints each repository name
     and the number of commits in that repository.
     """
-
+    result = []
     # 1. Get user's repositories
     repos_url = f"https://api.github.com/users/{user_id}/repos"
     repos_response = requests.get(repos_url)
 
     if repos_response.status_code != 200:
         print("Failed to retrieve repositories.")
-        return
+        return result
 
     repos = repos_response.json()
 
@@ -35,5 +36,8 @@ def get_repo_commits(user_id):
 
         # 5. Output result
         print(f"Repo: {repo_name} Number of commits: {commit_count}")
+
+        result.append((repo_name, commit_count))
+    return result
 
 get_repo_commits("Wei-Xiao-git")

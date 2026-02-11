@@ -23,4 +23,4 @@ jobs:
           pip install pytest requests
 
       - name: Run tests
-        run: pytest
+        run: pytest "HW 03a/test"

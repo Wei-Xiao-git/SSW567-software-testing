@@ -29,7 +29,7 @@ def test_invalid(a,b,c,expected):
         (3, 3, 3, "equilateral"),
         (3.3, 3.3, 3.3, "equilateral"),
         (3.3, 3.3, 2, "isosceles"),
-        (3.3, 3.3, 2, "right"), # test mistake
+        # (3.3, 3.3, 2, "right"), # test mistake
     ]
 )
 def test_valid(a,b,c,expected):
